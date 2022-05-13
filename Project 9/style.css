@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ddd;
+}
+
+.container {
+  background-color: #fff;
+  padding: 3rem;
+  text-align: center;
+  width: 500px;
+}
+
+.container h2 {
+  font-size: 30px;
+}
+
+.container p {
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.divider {
+  border: 0.5px solid #ddd;
+}
+
+.display-text {
+  font-size: 80px;
+  margin: 2rem 0;
+}
+
+.btn {
+  padding: 7px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+input {
+  padding: 7px;
+}
