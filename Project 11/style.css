@@ -1,0 +1,79 @@
+body {
+  background: #a0a0a0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: #fff;
+  width: 600px;
+  padding: 5rem;
+  text-align: center;
+}
+
+.divider {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
+}
+
+.category-wrap select {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 15px 0 20px 0;
+}
+
+.lead {
+  font-weight: 600;
+  font-size: 13px;
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+}
+
+.input-groups {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+
+.input-groups input {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.middle-div {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.input-groups select {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.formula-wrap {
+  margin-top: 2rem;
+  background-color: #dddeee;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  text-align: start;
+}
+.formula-wrap h3 {
+  color: #333333;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.formula-wrap p {
+  font-size: 0.9rem;
+  color: #424242;
+  margin-top: 1rem;
+  line-height: 1.2;
+}
