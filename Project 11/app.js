@@ -42,6 +42,9 @@ const converter = {
   },
 };
 
+let lastLeftSelectedValue = "";
+let lastRightSelectedValue = "";
+
 function main() {
   const categorySelect = document.getElementById("category-select");
   const leftSelect = document.getElementById("left-select");
@@ -60,27 +63,33 @@ function main() {
   categorySelect.addEventListener("change", function () {
     // Update Default Category Units
     updateCategoryChanges(categorySelect, leftSelect, rightSelect);
-
-    rightSelect.getElementsByTagName("option")[2].selected = "selected";
   });
 
-  // Handle Left Select
-
-  removeChild(leftSelect);
-  const leftOptions = Object.keys(units);
-  leftOptions.forEach((item) => {
-    addOption(leftSelect, { value: item, text: units[item] });
+  leftSelect.addEventListener("change", function (event) {
+    if (event.target.value === rightSelect.value) {
+      const options = rightSelect.getElementsByTagName("option");
+      for (let i = 0; i < options.length; i++) {
+        if (lastLeftSelectedValue === options[i].value) {
+          options[i].selected = "selected";
+          lastRightSelectedValue = options[i].value;
+        }
+      }
+    }
+    lastLeftSelectedValue = event.target.value;
   });
 
-  // Handle Right Select
-
-  removeChild(rightSelect);
-  const rightOptions = Object.keys(units);
-  rightOptions.forEach((item) => {
-    addOption(rightSelect, { value: item, text: units[item] });
+  rightSelect.addEventListener("change", function (event) {
+    if (event.target.value === leftSelect.value) {
+      const options = leftSelect.getElementsByTagName("option");
+      for (let i = 0; i < options.length; i++) {
+        if (lastRightSelectedValue === options[i].value) {
+          options[i].selected = "selected";
+          lastLeftSelectedValue = options[i].value;
+        }
+      }
+    }
+    lastRightSelectedValue = event.target.value;
   });
-
-  rightSelect.getElementsByTagName("option")[2].selected = "selected";
 }
 
 function addOption(parent, option) {
@@ -111,6 +120,8 @@ function updateCategoryChanges(categorySelect, leftSelect, rightSelect) {
     addOption(leftSelect, { value: item, text: units[item] });
   });
 
+  lastLeftSelectedValue = leftSelect.value;
+
   // Handle Right Select
 
   removeChild(rightSelect);
@@ -120,5 +131,6 @@ function updateCategoryChanges(categorySelect, leftSelect, rightSelect) {
   });
 
   //  Chage Default Options of right select
-  rightSelect.getElementsByTagName("option")[2].selected = "selected";
+  rightSelect.getElementsByTagName("option")[1].selected = "selected";
+  lastRightSelectedValue = rightSelect.value;
 }
