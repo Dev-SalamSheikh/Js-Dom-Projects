@@ -12,6 +12,128 @@ const converter = {
       squareYard: "Square Yard",
       squareFoot: "Square Foot",
     },
+    variant: {
+      "squareKm:squareM": {
+        formula: "multiply the length value by 100000",
+        calculation(n) {
+          return n * 100000;
+        },
+      },
+      "squareKm:squareMile": {
+        formula: "divide the length value by 2.59",
+        calculation(n) {
+          return n / 2.59;
+        },
+      },
+      "squareKm:squareYard": {
+        formula: "multiply the length value by 1196000",
+        calculation(n) {
+          return n * 1196000;
+        },
+      },
+      "squareKm:squareFoot": {
+        formula: "multiply the length value by 10760000",
+        calculation(n) {
+          return n * 10760000;
+        },
+      },
+      "squareM:squareKm": {
+        formula: "divide the length value by 1e+6",
+        calculation(n) {
+          return n / new Number("1e+6");
+        },
+      },
+      "squareM:squareMile": {
+        formula: "divide the length value by 2.59e+6",
+        calculation(n) {
+          return n / new Number("2.59e+6");
+        },
+      },
+      "squareM:squareYard": {
+        formula: "multiply the length value by 1.196",
+        calculation(n) {
+          return n * 1.196;
+        },
+      },
+      "squareM:squareFoot": {
+        formula: "multiply the area value by 10.764",
+        calculation(n) {
+          return n * 10.764;
+        },
+      },
+      "squareMile:squareKm": {
+        formula: "multiply the length value by 2.59",
+        calculation(n) {
+          return n * 2.59;
+        },
+      },
+      "squareMile:squareM": {
+        formula: "multiply the length value by 2.596e+6",
+        calculation(n) {
+          return n * new Number("2.59e+6");
+        },
+      },
+      "squareMile:squareYard": {
+        formula: "multiply the length value by 3.098e+6",
+        calculation(n) {
+          return n * new Number("3.098e+6");
+        },
+      },
+      "squareMile:squareFoot": {
+        formula: "multiply the length value by 2.788e+7",
+        calculation(n) {
+          return n * new Number("2.788e+7");
+        },
+      },
+      "squareYard:squareKm": {
+        formula: "divide the length value by 1.196e+6",
+        calculation(n) {
+          return n / new Number("1.196e+6");
+        },
+      },
+      "squareYard:squareM": {
+        formula: "divide the length value by 1.196",
+        calculation(n) {
+          return n / new Number("1e+6");
+        },
+      },
+      "squareYard:squareMile": {
+        formula: "divide the length value by 1e+6",
+        calculation(n) {
+          return n / 1.196;
+        },
+      },
+      "squareYard:squareFoot": {
+        formula: "divide the length value by 3.098e+6",
+        calculation(n) {
+          return n / new Number("3.098e+6");
+        },
+      },
+      "squareFoot:squareKm": {
+        formula: " divide the area value by 1.076e+7",
+        calculation(n) {
+          return n / new Number("1.076e+7");
+        },
+      },
+      "squareFoot:squareM": {
+        formula: "divide the length value by 10.764",
+        calculation(n) {
+          return n / 10.764;
+        },
+      },
+      "squareFoot:squareMile": {
+        formula: "divide the length value by 2.788e+7",
+        calculation(n) {
+          return n / 2.788e7;
+        },
+      },
+      "squareFoot:squareYard": {
+        formula: "divide the length value by 9",
+        calculation(n) {
+          return n / 9;
+        },
+      },
+    },
   },
   mass: {
     name: "Mass",
